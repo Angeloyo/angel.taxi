@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import { useVisitorCounter } from "./hooks/useVisitorCounter";
 
 export default function Home() {
   const { translations } = useLanguage();
+  const { formattedCount, loading } = useVisitorCounter();
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4">
@@ -24,7 +26,7 @@ export default function Home() {
       
       {/* Header */}
       <header className="w-full max-w-4xl text-center my-4">
-        <div className="relative max-w-44 h-[130px] mx-auto mb-4">
+        <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-4">
           <Image
             src="/taxi2.png"
             alt="Angel Taxi Logo"
@@ -49,7 +51,7 @@ export default function Home() {
           <p className="mb-4">{translations.serving}</p>
           <div className="flex justify-center my-4">
             <div className="visitor-counter mx-auto">
-              {translations.visitors}: 000738
+              {translations.visitors}: {loading ? '------' : formattedCount}
             </div>
           </div>
         </div>
