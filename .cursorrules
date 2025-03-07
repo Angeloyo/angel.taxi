@@ -1,0 +1,84 @@
+This is just a fun page for the domain angel.taxi
+The website is made with NextJS and hosted on vercel. 
+We use Supabase for backend.
+
+
+# CODE STRUCTURE
+
+.
+├── .cursorrules
+├── .env.local
+├── .gitignore
+├── README.md
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   ├── favicon.png
+│   ├── stars-bg.png
+│   ├── stars-bg.webp
+│   ├── taxi-logo.png
+│   ├── taxi-logo.webp
+│   ├── taxi1.png
+│   ├── taxi2.png
+│   ├── wing-divider.png
+│   └── wing-divider.webp
+├── src
+│   ├── app
+│   │   ├── api
+│   │   │   └── visitor-count
+│   │   │       └── route.ts
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── hooks
+│   │   │   └── useVisitorCounter.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components
+│   │   └── LanguageSelector.tsx
+│   ├── context
+│   │   └── LanguageContext.tsx
+│   └── utils
+│       └── supabase.ts
+└── tsconfig.json
+
+# SUPABASE CONFIGURATION
+
+CREATE TABLE visitors (
+  page VARCHAR(50) PRIMARY KEY,
+  count INTEGER DEFAULT 0,
+  last_updated TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Insert the record for the main page
+INSERT INTO visitors (page, count) VALUES ('home', 10);
+
+alter table visitors enable row level security;
+
+create policy "public can read visitors"
+on public.visitors
+for select to anon
+using (true);
+
+CREATE OR REPLACE FUNCTION public.increment_visitor_count(page_name TEXT)
+RETURNS INTEGER
+LANGUAGE plpgsql
+SECURITY DEFINER  -- <--- clave para que se ejecute con privilegios del dueño
+AS $$
+DECLARE
+  new_count INTEGER;
+BEGIN
+  UPDATE public.visitors
+     SET count        = count + 1,
+         last_updated = NOW()
+   WHERE page = page_name
+   RETURNING count INTO new_count;
+
+  RETURN new_count;
+END;
+$$;
+
+GRANT EXECUTE ON FUNCTION public.increment_visitor_count(TEXT) TO anon;
