@@ -16,26 +16,26 @@ export default function LanguageSelector() {
     setIsOpen(false);
   };
 
-  // Flag images for each language
-  const flags: Record<Language, string> = {
-    en: '🇺🇸',
-    es: '🇪🇸',
-  };
-
   // Language names
   const languageNames: Record<Language, string> = {
     en: 'English',
     es: 'Español',
   };
 
+  // Language codes for display
+  const languageCodes: Record<Language, string> = {
+    en: 'EN',
+    es: 'ES',
+  };
+
   return (
     <div className="relative">
       <button 
         onClick={toggleDropdown}
-        className="retro-border px-2 py-1 flex items-center text-sm"
+        className="language-selector-button px-3 py-1 flex items-center text-sm rounded"
       >
-        <span className="mr-2">{flags[language]}</span>
-        <span>{translations.languages}</span>
+        <span className="language-code font-bold mr-1">{languageCodes[language]}</span>
+        <span className="hidden sm:inline">{translations.languages}</span>
         <span className="ml-1">▼</span>
       </button>
       
@@ -45,11 +45,11 @@ export default function LanguageSelector() {
             <button
               key={code}
               onClick={() => selectLanguage(code as Language)}
-              className={`w-full text-left px-2 py-1 flex items-center hover:bg-cyan-900 ${
+              className={`language-option w-full text-left px-3 py-1 flex items-center ${
                 language === code ? 'bg-cyan-900' : ''
               }`}
             >
-              <span className="mr-2">{flags[code as Language]}</span>
+              <span className="language-code font-bold mr-2">{languageCodes[code as Language]}</span>
               <span>{name}</span>
             </button>
           ))}

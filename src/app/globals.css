@@ -83,3 +83,24 @@ a:hover {
   border: 1px solid #0f0;
   display: inline-block;
 }
+
+.language-selector-button {
+  background: linear-gradient(to bottom, #000066, #000033);
+  color: #ffff00;
+  border: 2px outset #6666ff;
+  font-family: 'Courier New', monospace;
+  text-shadow: 1px 1px 2px #0000ff;
+}
+
+.language-option {
+  transition: background-color 0.2s;
+}
+
+.language-option:hover {
+  background-color: #000099 !important;
+}
+
+.language-code {
+  font-family: 'Courier New', monospace;
+  color: #00ffff;
+}
