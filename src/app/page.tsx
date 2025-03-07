@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -12,6 +13,15 @@ export default function Home() {
       
       {/* Header */}
       <header className="w-full max-w-4xl text-center my-4">
+        <div className="relative max-w-44 h-[130px] mx-auto mb-4">
+          <Image
+            src="/taxi2.png"
+            alt="Angel Taxi Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
         <h1 className="text-4xl md:text-6xl font-bold text-yellow-300 blink">
           ANGEL.TAXI
         </h1>
