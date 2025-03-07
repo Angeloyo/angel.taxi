@@ -79,9 +79,12 @@ a:hover {
   font-family: monospace;
   background-color: #000;
   color: #0f0;
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid #0f0;
   display: inline-block;
+  width: 180px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .language-selector-button {
@@ -103,4 +106,35 @@ a:hover {
 .language-code {
   font-family: 'Courier New', monospace;
   color: #00ffff;
+}
+
+.counter-loading {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  color: #0f0;
+  font-family: monospace;
+  font-weight: bold;
+  position: relative;
+}
+
+.counter-loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60% { content: "..."; }
+  80%, 100% { content: "...."; }
+}
+
+@keyframes counter-loading-animation {
+  0% { color: #0f0; }
+  50% { color: #090; }
+  100% { color: #0f0; }
 }

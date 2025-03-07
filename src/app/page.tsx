@@ -51,7 +51,11 @@ export default function Home() {
           <p className="mb-4">{translations.serving}</p>
           <div className="flex justify-center my-4">
             <div className="visitor-counter mx-auto">
-              {translations.visitors}: {loading ? '------' : formattedCount}
+              {translations.visitors}: {loading ? (
+                <span className="counter-loading">&nbsp;</span>
+              ) : (
+                <span className="w-[60px] inline-block text-center">{formattedCount}</span>
+              )}
             </div>
           </div>
         </div>
