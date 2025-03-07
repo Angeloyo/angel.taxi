@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
-import { useVisitorCounter } from "./hooks/useVisitorCounter";
+import { useVisitorCounter } from "@/hooks/useVisitorCounter";
 
 export default function Home() {
   const { translations } = useLanguage();
@@ -19,8 +19,8 @@ export default function Home() {
         </span>
       </div>
       
-      {/* Language Selector */}
-      <div className="self-end mt-2 mr-2">
+      {/* Navigation Bar */}
+      <div className="w-full max-w-4xl flex justify-end items-center mt-2">
         <LanguageSelector />
       </div>
       
@@ -60,6 +60,15 @@ export default function Home() {
           </div>
         </div>
         
+        {/* <div className="relative w-full h-6 my-4">
+          <Image
+            src="/divider2.png"
+            alt="Decorative Divider"
+            fill
+            className="object-contain"
+          />
+        </div> */}
+        
         {/* Services */}
         <div className="retro-border w-full my-4">
           <h3 className="text-xl font-bold text-center text-fuchsia-500 mb-2">{translations.services}</h3>
@@ -71,6 +80,15 @@ export default function Home() {
           </ul>
         </div>
         
+        {/* <div className="relative w-full h-6 my-4">
+          <Image
+            src="/divider2.png"
+            alt="Decorative Divider"
+            fill
+            className="object-contain"
+          />
+        </div> */}
+        
         {/* Coming Soon */}
         <div className="retro-border w-full my-4 text-center">
           <h3 className="text-xl font-bold text-fuchsia-500 mb-2">
@@ -79,6 +97,15 @@ export default function Home() {
           <p>{translations.gameDesc}</p>
           <p className="text-sm mt-2">{translations.checkBack}</p>
         </div>
+        
+        {/* <div className="relative w-full h-6 my-4">
+          <Image
+            src="/divider2.png"
+            alt="Decorative Divider"
+            fill
+            className="object-contain"
+          />
+        </div> */}
         
         {/* Testimonials */}
         <div className="retro-border w-full my-4">
@@ -95,10 +122,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full max-w-4xl text-center my-4 text-sm">
         <div className="flex justify-center space-x-4 mb-2">
+          <Link href="/" className="hover:text-fuchsia-500 font-bold">{translations.home}</Link>
           <Link href="/about" className="hover:text-fuchsia-500">{translations.aboutUs}</Link>
           <Link href="/rates" className="hover:text-fuchsia-500">{translations.rates}</Link>
           <Link href="/contact" className="hover:text-fuchsia-500">{translations.contact}</Link>
-          <Link href="/game" className="hover:text-fuchsia-500">{translations.game}</Link>
         </div>
         <p>{translations.copyright}</p>
         <p className="text-xs mt-1">
