@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "./context/LanguageContext";
-import LanguageSelector from "./components/LanguageSelector";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Home() {
   const { translations } = useLanguage();
