@@ -17,15 +17,7 @@ We use Supabase for backend.
 ├── package.json
 ├── postcss.config.mjs
 ├── public
-│   ├── favicon.png
-│   ├── stars-bg.png
-│   ├── stars-bg.webp
-│   ├── taxi-logo.png
-│   ├── taxi-logo.webp
-│   ├── taxi1.png
-│   ├── taxi2.png
-│   ├── wing-divider.png
-│   └── wing-divider.webp
+│   └── taxi2.png
 ├── src
 │   ├── app
 │   │   ├── api
