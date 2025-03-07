@@ -46,6 +46,8 @@ body {
 .bg-stars {
   background-color: #000033;
   position: relative;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .bg-stars::before,
@@ -61,39 +63,66 @@ body {
 
 .bg-stars::before {
   background-image: 
-    radial-gradient(1px 1px at 25% 5%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 50% 15%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 75% 25%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 10% 35%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 30% 45%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 60% 55%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 85% 65%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 15% 75%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 40% 85%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 70% 95%, white 100%, transparent 0);
+    radial-gradient(1.5px 1.5px at 25% 5%, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+    radial-gradient(2px 2px at 50% 15%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 75% 25%, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+    radial-gradient(2px 2px at 10% 35%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 30% 45%, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+    radial-gradient(2px 2px at 60% 55%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 85% 65%, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+    radial-gradient(2px 2px at 15% 75%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 40% 85%, rgba(255, 255, 255, 0.9) 50%, transparent 50%),
+    radial-gradient(2px 2px at 70% 95%, rgba(255, 255, 255, 1) 50%, transparent 50%);
   background-size: 550px 550px;
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 1;
   animation: starsMoveSlow 150s linear infinite;
   z-index: -2;
 }
 
 .bg-stars::after {
   background-image: 
-    radial-gradient(1px 1px at 10% 10%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 35% 20%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 65% 30%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 20% 40%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 45% 50%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 75% 60%, white 100%, transparent 0),
-    radial-gradient(1.5px 1.5px at 25% 70%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 55% 80%, white 100%, transparent 0),
-    radial-gradient(1px 1px at 80% 90%, white 100%, transparent 0);
+    radial-gradient(1px 1px at 10% 10%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 35% 20%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 65% 30%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 20% 40%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 50%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 75% 60%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 25% 70%, rgba(255, 255, 255, 0.8) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 55% 80%, rgba(255, 255, 255, 1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 80% 90%, rgba(255, 255, 255, 0.8) 50%, transparent 50%);
   background-size: 400px 400px;
   background-repeat: repeat;
-  opacity: 0.6;
+  opacity: 1;
   animation: starsMoveFast 100s linear infinite;
   z-index: -1;
+}
+
+/* Add a subtle glow effect to the stars */
+.bg-stars::before,
+.bg-stars::after {
+  filter: blur(0.2px);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@keyframes starsMoveSlow {
+  from { 
+    transform: translateZ(0) translate(0, 0);
+  }
+  to { 
+    transform: translateZ(0) translate(-550px, -550px);
+  }
+}
+
+@keyframes starsMoveFast {
+  from { 
+    transform: translateZ(0) translate(0, 0);
+  }
+  to { 
+    transform: translateZ(0) translate(-400px, -400px);
+  }
 }
 
 /* Nebula Background */
@@ -229,16 +258,6 @@ body {
 }
 
 /* Animations */
-@keyframes starsMoveSlow {
-  from { background-position: 0 0; }
-  to { background-position: 550px 550px; }
-}
-
-@keyframes starsMoveFast {
-  from { background-position: 0 0; }
-  to { background-position: 400px 400px; }
-}
-
 @keyframes cityLights {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.6; }

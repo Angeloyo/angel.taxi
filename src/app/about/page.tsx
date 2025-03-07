@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   const { translations } = useLanguage();
@@ -80,15 +81,7 @@ export default function AboutPage() {
       </main>
       
       {/* Footer */}
-      <footer className="w-full max-w-4xl text-center my-4 text-sm">
-        <div className="flex justify-center space-x-4 mb-2">
-          <Link href="/" className="hover:text-fuchsia-500">{translations.home}</Link>
-          <Link href="/about" className="hover:text-fuchsia-500 font-bold">{translations.aboutUs}</Link>
-          <Link href="/rates" className="hover:text-fuchsia-500">{translations.rates}</Link>
-          <Link href="/contact" className="hover:text-fuchsia-500">{translations.contact}</Link>
-        </div>
-        <p>{translations.copyright}</p>
-      </footer>
+      <Footer />
     </div>
   );
 } 

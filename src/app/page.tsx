@@ -1,9 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import Footer from "@/components/Footer";
 import { useVisitorCounter } from "@/hooks/useVisitorCounter";
 
 export default function Home() {
@@ -120,23 +120,7 @@ export default function Home() {
       </main>
       
       {/* Footer */}
-      <footer className="w-full max-w-4xl text-center my-4 text-sm">
-        <div className="flex justify-center space-x-4 mb-2">
-          <Link href="/" className="hover:text-fuchsia-500 font-bold">{translations.home}</Link>
-          <Link href="/about" className="hover:text-fuchsia-500">{translations.aboutUs}</Link>
-          <Link href="/rates" className="hover:text-fuchsia-500">{translations.rates}</Link>
-          <Link href="/contact" className="hover:text-fuchsia-500">{translations.contact}</Link>
-        </div>
-        <p>{translations.copyright}</p>
-        <p className="text-xs mt-1">
-          <span className="mr-2">
-            <a href="#" className="hover:text-fuchsia-500">{translations.guestbook}</a>
-          </span>
-          <span>
-            <a href="#" className="hover:text-fuchsia-500">{translations.favorites}</a>
-          </span>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
