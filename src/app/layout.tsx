@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Comic_Neue } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { BackgroundWrapper } from "@/components/BackgroundWrapper";
 
 const comicNeue = Comic_Neue({
   weight: ['300', '400', '700'],
@@ -23,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${comicNeue.className}`}>
         <LanguageProvider>
-          {children}
+          <BackgroundWrapper>
+            {children}
+          </BackgroundWrapper>
         </LanguageProvider>
       </body>
     </html>
