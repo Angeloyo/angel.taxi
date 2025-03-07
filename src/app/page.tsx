@@ -28,7 +28,7 @@ export default function Home() {
       <header className="w-full max-w-4xl text-center my-4">
         <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-4">
           <Image
-            src="/taxi2.png"
+            src="/taxi4.png"
             alt="Angel Taxi Logo"
             fill
             className="object-contain"
