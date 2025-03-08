@@ -117,6 +117,29 @@ export default function Home() {
             {translations.testimonial2}
           </blockquote>
         </div>
+        
+        {/* Bob Tribute */}
+        <div className="retro-border w-full my-4 bg-blue-900/20">
+          <div className="p-4">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+              <div className="relative w-[14.8rem] h-[11rem] flex-shrink-0 border-4 border-yellow-300 p-1 bg-black shadow-lg">
+                <Image
+                  src="/bob5.png"
+                  alt="Bob"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="text-center md:text-left flex flex-col justify-center">
+                <p className="text-fuchsia-400 font-bold text-xl mb-2">{translations.inLovingMemoryOf || "In loving memory of Bob"}</p>
+                <p className="text-yellow-200 text-sm mb-3">1372 - 2024 AD</p>
+                <p className="italic">
+                  {translations.bobTribute || "We won't forget you."}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       
       {/* Footer */}
