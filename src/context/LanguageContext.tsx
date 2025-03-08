@@ -56,9 +56,9 @@ const enTranslations = {
 
   // about
   ourHistory: "Our Heavenly History",
-  foundingStory: "Angel Taxi was founded in the celestial year 0057 when we realized that souls needed a more efficient way to travel between heavenly destinations.",
+  foundingStory: "Angel Taxi was founded in the celestial year 0057 when we realized that souls needed a more efficient way to travel between heavenly destinations. Forget Charon's boat service and the stairway to heaven (they're exhausting). Relax and let us take you anywhere at affordable rates.",
   fleetDesc: "Our fleet of cloud-certified taxis has been serving the afterlife community with distinction, earning us the coveted \"5 Halo\" rating from the Celestial Transportation Authority for 20 consecutive years.",
-  charonCompare: "Unlike Charon's ferry service (one river, two coins), we go anywhere in Heaven at affordable rates!",
+  // charonCompare: "Unlike Charon's ferry service (one river, two coins), we go anywhere in Heaven at affordable rates!",
   firstTaxi: "Our first taxi (circa 0001)",
   fleetToday: "Today, Angel Taxi operates the largest fleet of winged vehicles in all of Heaven, serving both newly arrived souls and long-time residents with our signature celestial comfort.",
   mission: "Our mission is simple: To provide the smoothest transportation experience throughout eternity.",
@@ -163,9 +163,9 @@ const esTranslations = {
 
   // about
   ourHistory: "Nuestra Historia Celestial",
-  foundingStory: "Angel Taxi se fundó en el año celestial 0057 cuando nos percatamos de que las almas necesitaban una forma más eficiente de desplazarse entre los distintos destinos celestiales.",
+  foundingStory: "Angel Taxi se fundó en el año celestial 0057 cuando nos percatamos de que las almas se perdían buscando la luz al final del túnel. Olvida la barca de Caronte y las escaleras al cielo (son agotadoras). Relájate y deja que te llevemos a cualquier rincón a precios asequibles.",
   fleetDesc: "Nuestra flota de taxis homologados para nubes lleva sirviendo a la comunidad del más allá con distinción, habiendo obtenido la codiciada calificación de \"5 Aureolas\" de la Autoridad de Transporte Celestial durante 20 años consecutivos.",
-  charonCompare: "A diferencia del servicio de barca de Caronte (un solo río, dos monedas), ¡nosotros te llevamos a cualquier rincón del Cielo a precios asequibles!",
+  // charonCompare: "Olvida la barca de Caronte y las escaleras al cielo. Relájate y deja que te llevemos a cualquier rincón del Cielo a precios asequibles.",
   firstTaxi: "Nuestro primer taxi (año 0001)",
   fleetToday: "A día de hoy, Angel Taxi opera la mayor flota de vehículos alados en todo el Cielo, atendiendo tanto a las almas recién llegadas como a los residentes más veteranos con nuestro característico confort celestial.",
   mission: "Nuestra misión es sencilla: Ofrecer la experiencia de transporte más placentera durante toda la eternidad.",
