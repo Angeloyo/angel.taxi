@@ -24,12 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          defer
-          src="https://analytics.angeloyo.com/script.js"
-          data-website-id="59f6382a-7833-49b1-8840-c79db1ca442c"
-          strategy="afterInteractive"
-        />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            defer
+            src="https://analytics.angeloyo.com/script.js"
+            data-website-id="59f6382a-7833-49b1-8840-c79db1ca442c"
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body className={`${comicNeue.className}`}>
         <LanguageProvider>
