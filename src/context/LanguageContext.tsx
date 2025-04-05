@@ -56,7 +56,7 @@ const enTranslations = {
 
   // about
   ourHistory: "Our Heavenly History",
-  foundingStory: "Angel Taxi was founded in the celestial year 0057 when we realized that souls needed a more efficient way to travel between heavenly destinations. Forget Charon's boat service and the stairway to heaven (they're exhausting). Relax and let us take you anywhere at affordable rates.",
+  foundingStory: "Angel Taxi was founded in the celestial year 0057 when we realized that souls were getting lost looking for the light at the end of the tunnel. Forget Charon's boat service and the stairway to heaven (they're exhausting). Relax and let us take you anywhere at affordable rates.",
   fleetDesc: "Our fleet of cloud-certified taxis has been serving the afterlife community with distinction, earning us the coveted \"5 Halo\" rating from the Celestial Transportation Authority for 20 consecutive years.",
   // charonCompare: "Unlike Charon's ferry service (one river, two coins), we go anywhere in Heaven at affordable rates!",
   firstTaxi: "Our first taxi (circa 0001)",
